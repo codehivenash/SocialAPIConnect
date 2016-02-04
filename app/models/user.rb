@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
 				user.url = auth_hash['info']['urls']['Twitter']
 			elsif auth_hash['provider'] == "Facebook"
 				user.url = auth_hash['info']['urls'][user.provider.capitalize]
+			elsif auth_hash['provider'] == "Google"
+				user.url = auth_hash['info']['urls'][user.provider.capitalize]
 			end
 			user.save!
 			user
